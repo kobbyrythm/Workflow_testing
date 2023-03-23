@@ -1,4 +1,37 @@
-# github-action-test  
 
-**Q:** When I upload a file and fail with **'that’s a big file. Try again with a file smaller than 25MB.'**, what could I do?  
-**A:** This is because github limits uploading a file larger than 25MB uploaded directly. Please use command to do it. You can clone the repo and place your PDF file in the dirctory **'Source'**, and then use git add . / git commit -m "comments" / git push origin gh-graphs to upload it. If you can not clone from or push onto the repo, please contact xxx to get the permission.  
+# PROJECT NAME
+A template repository for student software development teams to use in for coursework
+
+## Your next steps
+* Change the .gitignore file to suite your needs - it's currently set to ignore python related temp files, etc. Google 'gitignore <your language>' to find examples.
+* Edit this file to fill in relevant empty sections below
+* Change the licence as required to a more suitable one. 
+  
+## Vision
+ Add something about what the application will do when more complete
+  
+## Requirements
+  List the libraries needed to build your application
+  
+## Building the application
+ What steps are there to build this application?
+
+## Testing the build
+How do I test the code to ensure the build is correct?
+  
+## Running the application
+ What do I do to deploy and/or run this?
+  
+## Team Members
+ 
+  Chen Zhaoqi
+
+ Deborah Duke  
+
+ Gulnoza Khamidova
+
+ Henry Lutterodt
+
+ Isaac Laryea
+
+ TaoLuo
