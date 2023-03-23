@@ -150,7 +150,7 @@ while len(files) > 1:
                     file.write('\n')
                     file.write('notes: "')
                     file.write('\n')
-                    file.write('<p>Page.' + str(page_num) + '</p>')
+                    file.write('<p><b>Page.' + str(page_num) + '</b></p>')
                     file.write('\n')
                     file.write(content)
                     file.write('\n')
@@ -172,7 +172,8 @@ while len(files) > 1:
                 with open (text_name, 'a', encoding='utf-8') as file:
 
                     # Write the continuous content.
-                    file.write('<p>Page.' + str(page_num) + '</p>')
+                    file.write('\n')
+                    file.write('<p><b>Page.' + str(page_num) + '</b></p>')
                     file.write('\n')
                     file.write(content)
                     file.write('\n')
@@ -252,8 +253,20 @@ while len(files) > 1:
     # Load the categories file and add the new category.
     with open("_data/categories.yml") as f:
         list_doc = yaml.safe_load(f)
-        new_catagory = {'name': pdf_name[:-4], 'logo': '/img/categories/uncategorized.svg', 'logo_credit': 'Edward Boatman from the Noun Project', 'featured': True}
-        list_doc.append(new_catagory)
+
+        # Define the category_re, which means whether the category exists or not.
+        category_re = 1
+
+        # If it is not a new category. category_re = 0.
+        for category in list_doc:
+            if pdf_name == category['name']:
+                category_re = 0
+                break
+        
+        # If category_re == 1, it means this is a new category, so create it.
+        if category_re == 1:
+            new_catagory = {'name': pdf_name[:-4], 'logo': '/img/categories/uncategorized.svg', 'logo_credit': 'Edward Boatman from the Noun Project', 'featured': True}
+            list_doc.append(new_catagory)
 
     with open("_data/categories.yml", 'w') as f:
         yaml.dump(list_doc, f)
