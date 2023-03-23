@@ -8,7 +8,7 @@ logo: /img/UoA.png
 jkan_theme: Default
 
 # Authentication
-github_client_id: 9d9f84dafcad011a2446
+github_client_id: 733202bc8ef73795fb62
 gatekeeper_host: 
 
 # Dataset schema
