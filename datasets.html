@@ -1,0 +1,24 @@
+---
+title: Datasets
+layout: default
+permalink: /datasets/
+---
+{% include breadcrumbs.html %}
+
+<div class="datasets-page" style="min-height: 85vh;">
+<div class="row">
+  <div class="col-sm-4">
+
+    <h3>Categories</h3>
+    <div class="list-group" data-component="categories-filter" data-show="5" aria-sort="ascending"></div>
+
+    <h3>Organizations</h3>
+    <div class="list-group" data-component="organizations-filter" data-show="15"></div>
+  </div>
+  <div class="col-sm-8" data-component="datasets-list">
+    <h3 class="datasets-count" data-hook="datasets-count"></h3>
+    <input type="text" data-hook="search-query" placeholder="Search..." class="form-control mb-3">
+    <div data-hook="datasets-items"></div>
+  </div>
+</div>
+</div>

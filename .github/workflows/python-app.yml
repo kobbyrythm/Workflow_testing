@@ -1,0 +1,55 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+name: Upload Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+
+    - name: Installed package list
+      run: apt list --installed
+    - name: Remove Chrome
+      run: sudo apt purge google-chrome-stable
+    - name: Remove default Chromium
+      run: sudo apt purge chromium-browser
+    - name: Install a new Chromium
+      run: sudo apt-get install chromium-browser
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+        pip install mdutils
+        pip install pillow
+        pip install PyMuPDF
+        pip install requests beautifulsoup4 pandas webdriver-manager selenium
+        
+    - name: Run app!
+      run: python script.py
+    
+    - name: Git config
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "<>"
+    - name: Git status
+      run: git status
+      
+    - name: Commit and push
+      run: |
+            DATE="$(date  --date="today" --rfc-3339=date)"
+            git add -A && git commit -m "Updated $DATE" && git push origin main

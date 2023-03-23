@@ -1,0 +1,45 @@
+{
+  "name": "es6-boilerplate",
+  "version": "1.0.0",
+  "description": "Front-end project boilerplate with es6 build tools. Includes babel, webpack, and npm scripts.",
+  "main": "scripts/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --mode=development --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timwis/es6-boilerplate.git"
+  },
+  "author": "timwis <tim@timwis.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timwis/es6-boilerplate/issues"
+  },
+  "homepage": "https://github.com/timwis/es6-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "ampersand-state": "^5.0.3",
+    "bootstrap": "^4.3.1",
+    "github-api": "^3.2.2",
+    "jquery": "^3.4.1",
+    "jquery-deparam": "^0.5.3",
+    "jquery-serializejson": "^2.9.0",
+    "js-cookie": "^2.2.0",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.11",
+    "notie": "github:timwis/notie#string-types",
+    "popper.js": "^1.15.0",
+    "select2": "^4.0.7"
+  }
+}
